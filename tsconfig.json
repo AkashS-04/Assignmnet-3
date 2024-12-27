@@ -1,3 +1,23 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".", // Set base URL for root directory
+    "paths": {
+      "*": ["src/*"], // Adjust this if your src folder is structured differently
+      "screens/*": ["src/screens/*"],
+      "styles/*": ["src/styles/*"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*.tsx", // Include all TSX files in src directory
+    "src/**/*.ts"   // Include all TS files in src directory
+  ],
+  "exclude": [
+    "node_modules", // Standard exclude
+    "babel.config.js",
+    "metro.config.js",
+    "index.js"
+  ]
 }
